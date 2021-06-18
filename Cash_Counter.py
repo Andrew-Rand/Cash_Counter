@@ -2,22 +2,17 @@ from tkinter import *
 from tkinter import messagebox
 
 def click():
-    res = int(txt_0.get()) * 0.01 + \
-        int(txt_1.get()) * 0.02 + \
-        int(txt_2.get()) * 0.05 + \
-        int(txt_3.get()) * 0.10 + \
-        int(txt_4.get()) * 0.20 + \
-        int(txt_5.get()) * 0.50 + \
-        int(txt_6.get()) * 1 + \
-        int(txt_7.get()) * 2 + \
-        int(txt_8.get()) * 5 + \
-        int(txt_9.get()) * 10 + \
-        int(txt_10.get()) * 20 + \
-        int(txt_11.get()) * 50 + \
-        int(txt_12.get()) * 100 + \
-        int(txt_13.get()) * 200 + \
-        int(txt_14.get()) * 500 
-        
+    nominals = [0.01, 0.02, 0.05, 0.10, 0.20, 0.50, 1, 2, 5, 10, 20, 50, 100, 200, 500]
+    res = 0
+    for i in range(len(denom)):
+        a = f"txt_{i}"
+        try:
+            num = int(globals()[a]. get())
+        except ValueError:
+            num = 0 
+        res += num * nominals[i]
+
+
     messagebox.showinfo("Hi!", f"Something was counted {res}")
 
 window = Tk()
@@ -55,7 +50,5 @@ empt.grid(row=10)
 btn = Button(window, text="Count!", bg="white", fg="black", command=click)
 btn.grid(column=3, row=11)
 
-
-window.mainloop()
 
 window.mainloop()
