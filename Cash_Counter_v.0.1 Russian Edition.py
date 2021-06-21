@@ -47,13 +47,11 @@ for i in range(len(denom)):
 empt = Label(window, text="")
 empt.grid(row=10)
 
-btn = Button(window, text="Count!", bg="white", fg="black", command=click)
+btn = Button(window, text="Посчитать!", bg="white", fg="black", command=click,
+             height = 2, width = 10)
 btn.grid(column=3, row=11)
 
 result = Label(window, text = "", font=("Comic Sans MS", 15))
-result.place(x = 10, y = 280)
+result.place(x = 10, y = 300)
 
-click()    
 window.mainloop()
-
-
