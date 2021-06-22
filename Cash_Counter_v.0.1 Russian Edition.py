@@ -1,18 +1,19 @@
 from tkinter import *
 
+
 def click():
     NOMINALS = (0.01, 0.02, 0.05, 0.10, 0.20, 0.50, 1, 2, 5, 10, 20, 50, 100, 200, 500)
     res = 0
-    for i in range(len(denom)):
+    for i in range(len(DENOM)):
         a = f"txt_{i}"
         try:
             num = int(globals()[a]. get())
         except ValueError:
             num = 0 
-        res += num * nominals[i]
-        res_rub = int(res // 1)
-        res_cop = round((res % 1) * 100)
-    result.configure(text = f"В кассе: {res_rub} рублей, {res_cop} копеек")
+        res += num * NOMINALS[i]
+    res_rub = int(res // 1)
+    res_cop = round((res % 1) * 100)
+    result.configure(text=f"В кассе: {res_rub} рублей, {res_cop} копеек")
 
 
 window = Tk()
@@ -33,25 +34,25 @@ DENOM = ("1 копейка", "2 копейки", "5 копеек", "10 копе�
 
 for i in range(len(DENOM)):
     a = f"txt_{i}"
-    if i < (len(denom) / 2):
-        lbl = Label(window, text=denom[i], font = ("Comic Sans MS", 10))
-        lbl.grid(column=1, row= i + 1)
+    if i < (len(DENOM) / 2):
+        lbl = Label(window, text=DENOM[i], font=("Comic Sans MS", 10))
+        lbl.grid(column=1, row=i + 1)
         globals()[a] = Entry(window, width=10)
-        globals()[a].grid(column=2, row= i + 1)
+        globals()[a].grid(column=2, row=i + 1)
     else:
-        lbl = Label(window, text=denom[i], font = ("Comic Sans MS", 10))
-        lbl.grid(column=4, row= i + 1 - len(denom) // 2)
+        lbl = Label(window, text=DENOM[i], font=("Comic Sans MS", 10))
+        lbl.grid(column=4, row=i + 1 - len(DENOM) // 2)
         globals()[a] = Entry(window, width=10)
-        globals()[a].grid(column=5, row= i + 1 - len(denom) // 2)
+        globals()[a].grid(column=5, row=i + 1 - len(DENOM) // 2)
 
 empty_string = Label(window, text="")
 empty_string.grid(row=10)
 
 btn = Button(window, text="Посчитать!", bg="white", fg="black", command=click,
-             height = 2, width = 10)
+             height=2, width=10)
 btn.grid(column=3, row=11)
 
-result = Label(window, text = "", font=("Comic Sans MS", 15))
-result.place(x = 10, y = 300)
+result = Label(window, text="", font=("Comic Sans MS", 15))
+result.place(x=10, y=300)
 
 window.mainloop()
