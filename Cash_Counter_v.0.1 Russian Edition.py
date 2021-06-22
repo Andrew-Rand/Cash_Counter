@@ -1,7 +1,7 @@
 from tkinter import *
 
 def click():
-    nominals = [0.01, 0.02, 0.05, 0.10, 0.20, 0.50, 1, 2, 5, 10, 20, 50, 100, 200, 500]
+    NOMINALS = (0.01, 0.02, 0.05, 0.10, 0.20, 0.50, 1, 2, 5, 10, 20, 50, 100, 200, 500)
     res = 0
     for i in range(len(denom)):
         a = f"txt_{i}"
@@ -24,14 +24,14 @@ lbl.grid(column=0, row=0)
 
 #  Объявление всех ячеек, переделать в ООП!!!
 
-denom = ["1 копейка", "2 копейки", "5 копеек", "10 копеек",
+DENOM = ("1 копейка", "2 копейки", "5 копеек", "10 копеек",
          "20 копеек", "50 копеек", 
          "1 рубль", "2 рубля", "5 рублей", "10 рублей",
          "20 рублей", "50 рублей", "100 рублей",
-         "200 рублей", "500 рублей"]
+         "200 рублей", "500 рублей")
 
 
-for i in range(len(denom)):
+for i in range(len(DENOM)):
     a = f"txt_{i}"
     if i < (len(denom) / 2):
         lbl = Label(window, text=denom[i], font = ("Comic Sans MS", 10))
@@ -44,8 +44,8 @@ for i in range(len(denom)):
         globals()[a] = Entry(window, width=10)
         globals()[a].grid(column=5, row= i + 1 - len(denom) // 2)
 
-empt = Label(window, text="")
-empt.grid(row=10)
+empty_string = Label(window, text="")
+empty_string.grid(row=10)
 
 btn = Button(window, text="Посчитать!", bg="white", fg="black", command=click,
              height = 2, width = 10)
