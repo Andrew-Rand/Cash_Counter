@@ -13,7 +13,7 @@ def click():
         res += num * NOMINALS[i]
     res_rub = int(res // 1)
     res_cop = round((res % 1) * 100)
-    result.configure(text=f"В кассе: {res_rub} рублей, {res_cop} копеек")
+    result.configure(text=f"В кассе: {res_rub} рублей, {res_cop} копеек".center(40, " "))
 
 
 window = Tk()
@@ -48,11 +48,17 @@ for i in range(len(DENOM)):
 empty_string = Label(window, text="")
 empty_string.grid(row=10)
 
-btn = Button(window, text="Посчитать!", bg="white", fg="black", command=click,
-             height=2, width=10)
-btn.grid(column=3, row=11)
+result = Label(window, text="", font=("Comic Sans MS", 11))
+result.place(x=10, y=280)
 
-result = Label(window, text="", font=("Comic Sans MS", 15))
-result.place(x=10, y=300)
 
-window.mainloop()
+#window.mainloop()
+
+while True:
+    click()
+    window.update_idletasks()
+    window.update()
+
+
+
+
