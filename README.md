@@ -1,7 +1,7 @@
 # Cash_Counter
 
 Simple calculator for money. 
-You can use this app to count different [denominations]() at the [cash box]() and see your proceeds.
+You can use this app to count different [denominations](https://lh3.googleusercontent.com/proxy/eoItzo6Pq3MYEF2ZBOE_LJLxXkwQ6Nlw1EeUpoUohVvHMYpXhvGwpW0ApVba_8TJ4KKQKqvaP7lLdMz-J1aC5e__hvhBQhVPzYPverrr6AVOPkwHhQSbK5v2mnB_7JQ) at the [cash box](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfWo95c7fb43NLy_aYO1JfRh06EelQSp4lgA&usqp=CAU) and see your proceeds.
 
 ## Release dicription
 
@@ -30,7 +30,7 @@ You just need to open file /app/dist/Cash_Counter_v_1_0_Russian.exe in your cmd:
 
 Скриншот консоли
 
-or open Cash_caunter.exe in your favorite file system explorer
+or open Cash_Counter_v_1_0_Russian.exe in your favorite file system explorer
 
 Скриншот проводника
 
