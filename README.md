@@ -55,6 +55,6 @@ And you can start to recruit new cash numbers and they will be recalculated agai
 If you write something other than a number in the cache field, the application will interpret it as "0" (zero). Be careful.
 
 #Thank you very much indeed for reading this file.
-If you want to improve readme.md or the application, you can send me a [message](xseven693@gmail.com) or clone [this repo](github) and send me your Pull Request.
+If you want to improve readme.md or the application, you can send me a [message](xseven693@gmail.com) or clone [this repo](https://github.com/Andrew-Rand/Cash_Counter.git) and send me your Pull Request.
 
 
