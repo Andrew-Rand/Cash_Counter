@@ -49,7 +49,7 @@ def count_cash():
             num = int(globals()[cash_field]. get())
         except ValueError:
             num = 0 
-        res += num * NOMINALS[i]
+        res += num * NOMINALS[denom]
         res_rub = int(res // 1)
         res_cop = round((res % 1) * 100)
     result.configure(text=f"В кассе: {res_rub} "
