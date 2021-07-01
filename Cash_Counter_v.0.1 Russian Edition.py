@@ -10,29 +10,29 @@ DENOM = ("1 копейка", "2 копейки", "5 копеек", "10 копе�
          "20 рублей", "50 рублей", "100 рублей",
          "200 рублей", "500 рублей")
 
-RUBLES = {0:"рублей",
-          1:"рубль",
-          2:"рубля",
-          3:"рубля",
-          4:"рубля",
-          5:"рублей",
-          6:"рублей",
-          7:"рублей",
-          8:"рублей",
-          9:"рублей"
+RUBLES = {0: "рублей",
+          1: "рубль",
+          2: "рубля",
+          3: "рубля",
+          4: "рубля",
+          5: "рублей",
+          6: "рублей",
+          7: "рублей",
+          8: "рублей",
+          9: "рублей"
           }
 
-COP = {0:"копеек",
-          1:"копейка",
-          2:"копейки",
-          3:"копейки",
-          4:"копейки",
-          5:"копеек",
-          6:"копеек",
-          7:"копеек",
-          8:"копеек",
-          9:"копеек"
-          }
+COP = {0: "копеек",
+       1: "копейка",
+       2: "копейки",
+       3: "копейки",
+       4: "копейки",
+       5: "копеек",
+       6: "копеек",
+       7: "копеек",
+       8: "копеек",
+       9: "копеек"
+       }
 
 
 def count_cash():
@@ -41,19 +41,21 @@ def count_cash():
         result to res label
     """
     
-    res = 0
-    for i in range(len(DENOM)):
-        a = f"txt_{i}"
+    res, res_rub, res_cop = 0, 0, 0
+
+    for denom in range(len(DENOM)):
+        cash_field = f"txt_{denom}"
         try:
-            num = int(globals()[a]. get())
+            num = int(globals()[cash_field]. get())
         except ValueError:
             num = 0 
         res += num * NOMINALS[i]
         res_rub = int(res // 1)
         res_cop = round((res % 1) * 100)
-    result.configure(text = f"В кассе: {res_rub}"
+    result.configure(text=f"В кассе: {res_rub} "
                      f"{RUBLES[int(str(res_rub)[-1])]},"
                      f"{res_cop} {COP[int(str(res_cop)[-1])]}".center(55, " "))
+
 
 def click():
     """
@@ -61,9 +63,9 @@ def click():
         cash fields will be cleared
     """
     
-    for i in range(len(DENOM)):
-        a = f"txt_{i}"
-        globals()[a].delete(0, END)
+    for denom in range(len(DENOM)):
+        cash_field = f"txt_{denom}"
+        globals()[cash_field].delete(0, END)
 
 
 window = Tk()
@@ -78,24 +80,24 @@ lbl.grid(column=0, row=0)
 for i in range(len(DENOM)):
     a = f"txt_{i}"
     if i < (len(DENOM) / 2):
-        lbl = Label(window, text=DENOM[i], font = ("Comic Sans MS", 10))
-        lbl.grid(column=1, row= i + 1)
+        lbl = Label(window, text=DENOM[i], font=("Comic Sans MS", 10))
+        lbl.grid(column=1, row=i + 1)
         globals()[a] = Entry(window, width=10)
-        globals()[a].grid(column=2, row= i + 1)
+        globals()[a].grid(column=2, row=i + 1)
     else:
-        lbl = Label(window, text=DENOM[i], font = ("Comic Sans MS", 10))
-        lbl.grid(column=4, row= i + 1 - len(DENOM) // 2)
+        lbl = Label(window, text=DENOM[i], font=("Comic Sans MS", 10))
+        lbl.grid(column=4, row=i + 1 - len(DENOM) // 2)
         globals()[a] = Entry(window, width=10)
-        globals()[a].grid(column=5, row= i + 1 - len(DENOM) // 2)
+        globals()[a].grid(column=5, row=i + 1 - len(DENOM) // 2)
 
 empt = Label(window, text="        ")
 empt.grid(column=3, row=10)
 
-result = Label(window, text = "", font=("Comic Sans MS", 11))
-result.place(x = 1, y = 270)
+result = Label(window, text="", font=("Comic Sans MS", 11))
+result.place(x=1, y=270)
 
 clear_btn = Button(window, text="Очистить!",
-                   bg="white", fg="red", font = ("Comic Sans MS", 10),
+                   bg="white", fg="red", font=("Comic Sans MS", 10),
                    command=click)
 clear_btn.place(x=130, y=320)
 
@@ -103,4 +105,3 @@ while True:
     count_cash()
     window.update_idletasks()
     window.update()
-    
