@@ -16,7 +16,7 @@ To start Cash_Counter, whrite into console in this directory:
 
   python -m Cash_Counter_v_1_0_Russian.py
   
-![flake8 не прошел](pictures/flake8-fail.png)
+![py cmd](pictures/flake8-fail.png)
 
 or you can run it by double click in that directory
 
