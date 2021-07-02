@@ -16,7 +16,7 @@ To start Cash_Counter, whrite into console in this directory:
 
   python -m Cash_Counter_v_1_0_Russian.py
   
-![py cmd](pictures/py_cmd.py)
+![py cmd](pictures/py_cmd.png)
 
 or you can run it by double click in that directory
 
