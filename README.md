@@ -20,7 +20,7 @@ To start Cash_Counter, whrite into console in this directory:
 
 or you can run it by double click in that directory
 
-Скриншот с папки
+![py explorer](pictures/py_explorer.png)
 
 ## How to use this program like independent application
 
@@ -28,23 +28,24 @@ You can use this application without a Python interpreter.
 If you have Windows 7, 8 or 10 (x64 OS only), you can run Cash-Counter as an exe file.
 You just need to open file /app/dist/Cash_Counter_v_1_0_Russian.exe in your cmd:
 
-Скриншот консоли
+![exe cmd](pictures/exe_cmd.png)
 
 or open Cash_Counter_v_1_0_Russian.exe in your favorite file system explorer
 
-Скриншот проводника
+![exe explorer](pictures/exe_explorer.png)
 
 ## How does the Cash_Counter work
 
 Cash Counter looks like the same window in the picture
 
-скриншот морды приложения
+![app](pictures/app.png)
 
 The application window has the cash fields with labels, where you need to write digits, the clear button and the result string.
 It works at the real time. Just write some digit in Cash fields and it will be counted.
 Pay attention to that russian release supports linguistic cases for words "Рубли" и "Копейки".
 
-3 скриншота с демонстрацией того, как меняются рубли и копейки.
+![app](pictures/1r_1k.png)
+![app](pictures/2r_2k.png)
 
 Basically, if you want to start a new calculation, you can close and restart Cash_counter. But you can also use the clear button. After clicking on this red-labeled button, the checkout fields will be cleared and the result will be
 
